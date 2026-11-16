@@ -1,0 +1,19 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Orders.Infrastructure.Services.Categories;
+using Orders.Infrastructure.Services.Users;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Orders.Infrastructure.Extentions
+{
+    public static class ServiceContainer
+    {
+        public static IServiceCollection RegisterServices(this IServiceCollection services)
+        {
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IUserService, UserService>();
+            return services;
+        }
+    }
+}
